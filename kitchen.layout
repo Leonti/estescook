@@ -4,8 +4,8 @@
 	<File name="src/db_set_panel.cpp" open="1" top="0" tabpos="4">
 		<Cursor position="5908" topLine="23" />
 	</File>
-	<File name="src/kitchenMain.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="28507" topLine="531" />
+	<File name="src/kitchenMain.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="16465" topLine="318" />
 	</File>
 	<File name="src/kitchenMain.h" open="1" top="0" tabpos="5">
 		<Cursor position="3603" topLine="97" />
@@ -13,7 +13,7 @@
 	<File name="src/threeorders.cpp" open="1" top="0" tabpos="2">
 		<Cursor position="81" topLine="0" />
 	</File>
-	<File name="src/utils.cpp" open="1" top="1" tabpos="3">
-		<Cursor position="2358" topLine="66" />
+	<File name="src/utils.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="2358" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

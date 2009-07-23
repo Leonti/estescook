@@ -2767,3 +2767,146 @@
 1208011512 source:/home/leonti/usa/kitchen/src/wx_std.cpp
 	"wx_std.h"
 
+1212086388 source:/home/leonti/usa/estescook/src/conn_set_panel.cpp
+	"conn_set_panel.h"
+	<wx/string.h>
+	<wx/intl.h>
+
+1212086113 /home/leonti/usa/estescook/src/conn_set_panel.h
+	<wx/spinctrl.h>
+	<wx/sizer.h>
+	<wx/panel.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	<wx/config.h>
+	"prog_set_panel.h"
+
+1212059730 /home/leonti/usa/estescook/src/prog_set_panel.h
+	<wx/sizer.h>
+	<wx/panel.h>
+	<wx/stattext.h>
+	<wx/choice.h>
+	<wx/config.h>
+	<wx/msgdlg.h>
+
+1237059203 source:/home/leonti/usa/estescook/src/db_set_panel.cpp
+	"db_set_panel.h"
+	<wx/string.h>
+	<wx/intl.h>
+
+1210509693 /home/leonti/usa/estescook/src/db_set_panel.h
+	<wx/checkbox.h>
+	<wx/sizer.h>
+	<wx/panel.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	<wx/msgdlg.h>
+	<wx/config.h>
+	<string>
+	<mysql++.h>
+	<iostream>
+	"wx_std.h"
+
+1208011542 /home/leonti/usa/estescook/src/wx_std.h
+	<string>
+	<wx/string.h>
+
+1209910683 source:/home/leonti/usa/estescook/src/kitchenApp.cpp
+	"kitchenApp.h"
+	"kitchenMain.h"
+	<wx/image.h>
+
+1209910682 /home/leonti/usa/estescook/src/kitchenApp.h
+	<wx/app.h>
+
+1238009634 /home/leonti/usa/estescook/src/kitchenMain.h
+	<wx/sizer.h>
+	<wx/notebook.h>
+	<wx/button.h>
+	<wx/menu.h>
+	<wx/panel.h>
+	<wx/statusbr.h>
+	<wx/frame.h>
+	<wx/tglbtn.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	<wx/timer.h>
+	<wx/listbox.h>
+	<wx/htmllbox.h>
+	"threeorders.h"
+	<mysql++.h>
+	<wx/msgdlg.h>
+	"wx_std.h"
+	"settings.h"
+	"utils.h"
+	<wx/dynarray.h>
+	<wx/socket.h>
+
+1216731110 /home/leonti/usa/estescook/src/threeorders.h
+	<wx/sizer.h>
+	<wx/button.h>
+	<wx/panel.h>
+	<wx/stattext.h>
+	<wx/listbox.h>
+	<wx/msgdlg.h>
+	<wx/htmllbox.h>
+	<mysql++.h>
+	"wx_std.h"
+	"utils.h"
+	<wx/dynarray.h>
+	<wx/socket.h>
+	<wx/notebook.h>
+
+1216746156 /home/leonti/usa/estescook/src/utils.h
+	<wx/string.h>
+	<wx/arrstr.h>
+	<wx/intl.h>
+	<wx/datetime.h>
+	<mysql++.h>
+	"wx_std.h"
+	<wx/socket.h>
+
+1212061609 /home/leonti/usa/estescook/src/settings.h
+	<wx/dialog.h>
+	<wx/sizer.h>
+	<wx/notebook.h>
+	<wx/button.h>
+	<wx/statline.h>
+	"db_set_panel.h"
+	"prog_set_panel.h"
+	"conn_set_panel.h"
+	<wx/config.h>
+	<wx/dialog.h>
+	<mysql++.h>
+
+1238012966 source:/home/leonti/usa/estescook/src/kitchenMain.cpp
+	"kitchenMain.h"
+	<wx/msgdlg.h>
+	<wx/string.h>
+	<wx/intl.h>
+	<wx/font.h>
+	<wx/arrimpl.cpp>
+
+1212054914 source:/home/leonti/usa/estescook/src/prog_set_panel.cpp
+	"prog_set_panel.h"
+	<wx/string.h>
+	<wx/intl.h>
+
+1212061609 source:/home/leonti/usa/estescook/src/settings.cpp
+	"settings.h"
+	<wx/string.h>
+	<wx/intl.h>
+
+1238009186 source:/home/leonti/usa/estescook/src/threeorders.cpp
+	"threeorders.h"
+	<wx/string.h>
+	<wx/intl.h>
+	<wx/font.h>
+	<wx/arrimpl.cpp>
+
+1237476568 source:/home/leonti/usa/estescook/src/utils.cpp
+	"utils.h"
+
+1208011512 source:/home/leonti/usa/estescook/src/wx_std.cpp
+	"wx_std.h"
+

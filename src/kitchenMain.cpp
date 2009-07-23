@@ -326,7 +326,7 @@ void kitchenFrame::readFromDining(wxSocketBase *sock){
 if(s == _T("n:")){ //we have new order
 fillAll();
     }else if(s.Mid(0,2) == _T("m:")){
-        TextCtrl1->AppendText(s.Mid(2,s.Length()) + _T("\n"));
+        TextCtrl1->AppendText(_("POS: ") + s.Mid(2,s.Length()) + _T("\n"));
         }
 
     }
@@ -752,7 +752,7 @@ void kitchenFrame::OnButton6Click(wxCommandEvent& event)
     if(SocketClient1->IsConnected()){
     sendMessageToServer(SocketClient1, _T("m:") + message);
     TextCtrl2->Clear();
-    TextCtrl1->AppendText(message + _T("\n"));
+    TextCtrl1->AppendText(_("Kitchen: ") + message + _T("\n"));
     }else{
     wxMessageBox(_T("Host computer is not connected!\n Message was not sent."));
         }
