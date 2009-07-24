@@ -52,6 +52,14 @@ kitchenApp.cpp
 <install-to>$(BINDIR)</install-to>
                 </exe>
 <if cond = "TARGETING_WIN32=='0'">
+		<data-files>
+			<files>
+../share/estescook/done.png
+../share/estescook/todo.png
+</files>
+			<install-to>$(DATADIR)/estes</install-to>
+		</data-files>
+
 		<data-files-tree>
 <srcdir>share</srcdir>
 			<files>
