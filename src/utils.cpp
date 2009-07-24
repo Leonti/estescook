@@ -57,11 +57,16 @@ toRet << _T("<br> * ") << parts[i];
     }
 wxString readyImage;
 if(ready){
-    readyImage = _T("ready.jpg");
+    readyImage = _T("done.png");
     }else{
-    readyImage = _T("notready.jpg");
+    readyImage = _T("todo.png");
         }
-toRet << _T("</td><td width = 50><a href=") << num << _T(":") << dishId << _T("><img src=/home/leonti/") << readyImage << _T("></a></td></tr></table></div>");
+
+         wxStandardPaths path;
+wxFileName imageName;
+imageName.Assign(path.GetDataDir(),readyImage);
+
+toRet << _T("</td><td width = 50><a href=") << num << _T(":") << dishId << _T("><img src=") << imageName.GetFullPath() << _T("></a></td></tr></table></div>");
 
 if(comment != _T("")){
 toRet << _T("<font size=2><br align=left>Comment: <i>") << comment << _T("</i></font>");

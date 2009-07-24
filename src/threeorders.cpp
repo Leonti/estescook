@@ -270,7 +270,7 @@ temp << num;
     for(int i = 0; i < pointers.GetCount(); ++i){
         if(pointers[i].listBoxId == event.GetId()){
             wxString toReplace = pointers[i].listbox->GetString(num);
-            toReplace.Replace(_T("notready.jpg"),_T("ready.jpg"));
+            toReplace.Replace(_T("todo.png"),_T("done.png"));
 pointers[i].listbox->SetString(num, toReplace);
 query << "SELECT `id` FROM `orders_dishes` WHERE `ready`=0 AND `order_id`=" << pointers[i].orderId;
 mysqlpp::StoreQueryResult res = query.store();

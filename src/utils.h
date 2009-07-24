@@ -8,6 +8,9 @@
 #include <mysql++.h>
 #include "wx_std.h"
 #include <wx/socket.h>
+#include <wx/stdpaths.h>
+#include <wx/filename.h>
+
 wxString formatItem(mysqlpp::Connection* conn, int num, int dishId, bool main = false);
 wxString getPartName(mysqlpp::Connection* conn, int partId);
 bool sendMessageToServer(wxSocketClient* SocketClient, wxString message);
