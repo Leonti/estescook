@@ -35,7 +35,8 @@
 </if>
                         <win32-res>res/resource.rc</win32-res>
 
-                        <sources>settings.cpp
+                        <sources>
+settings.cpp
 kitchenMain.cpp
 wx_std.cpp
 conn_set_panel.cpp
@@ -69,5 +70,18 @@ locale/ru/LC_MESSAGES/estescook.mo
 </files>
 			<install-to>$(DATADIR)</install-to>
 		</data-files-tree>
+<data-files>
+<files>
+estescook.desktop
+</files>
+<install-to>$(DATADIR)/applications</install-to>
+</data-files>
+
+<data-files>
+<files>
+estescook.png
+</files>
+<install-to>$(DATADIR)/pixmaps</install-to>
+</data-files>
 </if>
         </makefile> 
