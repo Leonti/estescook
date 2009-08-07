@@ -1,0 +1,305 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-07 12:44-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: conn_set_panel.cpp:29
+msgid ""
+"Specify local name or IP of the main POS \n"
+"computer and port to connect:"
+msgstr ""
+
+#: conn_set_panel.cpp:32
+msgid "Name or IP:"
+msgstr ""
+
+#: conn_set_panel.cpp:34
+msgid "192.168.0.1"
+msgstr ""
+
+#: conn_set_panel.cpp:36
+msgid "Port:"
+msgstr ""
+
+#: db_set_panel.cpp:52
+msgid "Please edit this setting before connecting to the database."
+msgstr ""
+
+#: db_set_panel.cpp:55
+msgid "Host"
+msgstr ""
+
+#: db_set_panel.cpp:57
+msgid "localhost"
+msgstr ""
+
+#: db_set_panel.cpp:59
+msgid "User"
+msgstr ""
+
+#: db_set_panel.cpp:61
+msgid "root"
+msgstr ""
+
+#: db_set_panel.cpp:63
+msgid "Password"
+msgstr ""
+
+#: db_set_panel.cpp:67
+msgid "Database name"
+msgstr ""
+
+#: db_set_panel.cpp:69
+msgid "rest_pos"
+msgstr ""
+
+#: db_set_panel.cpp:72
+msgid "Show this dialog on next startup"
+msgstr ""
+
+#: kitchenMain.cpp:110
+msgid "Pending items:"
+msgstr ""
+
+#: kitchenMain.cpp:114
+msgid "Refresh"
+msgstr ""
+
+#: kitchenMain.cpp:120
+msgid "Qty"
+msgstr ""
+
+#: kitchenMain.cpp:125
+msgid "Time"
+msgstr ""
+
+#: kitchenMain.cpp:135 kitchenMain.cpp:157 threeorders.cpp:74
+#: threeorders.cpp:146
+msgid "UP"
+msgstr ""
+
+#: kitchenMain.cpp:139 kitchenMain.cpp:161 threeorders.cpp:76
+#: threeorders.cpp:148
+msgid "DOWN"
+msgstr ""
+
+#: kitchenMain.cpp:147
+msgid "Selected items info:"
+msgstr ""
+
+#: kitchenMain.cpp:175
+msgid "Send"
+msgstr ""
+
+#: kitchenMain.cpp:183
+msgid "Pending items"
+msgstr ""
+
+#: kitchenMain.cpp:188
+msgid "Quit\tAlt-F4"
+msgstr ""
+
+#: kitchenMain.cpp:188
+msgid "Quit the application"
+msgstr ""
+
+#: kitchenMain.cpp:190
+msgid "&File"
+msgstr ""
+
+#: kitchenMain.cpp:192
+msgid "General"
+msgstr ""
+
+#: kitchenMain.cpp:194 settings.cpp:43
+msgid "Settings"
+msgstr ""
+
+#: kitchenMain.cpp:196
+msgid "About\tF1"
+msgstr ""
+
+#: kitchenMain.cpp:196
+msgid "Show info about this application"
+msgstr ""
+
+#: kitchenMain.cpp:198
+msgid "Help"
+msgstr ""
+
+#: kitchenMain.cpp:259
+msgid "Trying to connect (timeout = 10 sec)..."
+msgstr ""
+
+#: kitchenMain.cpp:264
+msgid "Connection to '"
+msgstr ""
+
+#: kitchenMain.cpp:264
+msgid "' established."
+msgstr ""
+
+#: kitchenMain.cpp:268
+msgid "Unable to connect to '"
+msgstr ""
+
+#: kitchenMain.cpp:268
+msgid "'."
+msgstr ""
+
+#: kitchenMain.cpp:304
+msgid "Lost connection."
+msgstr ""
+
+#: kitchenMain.cpp:324
+#, c-format
+msgid "%s"
+msgstr ""
+
+#: kitchenMain.cpp:329
+msgid "POS: "
+msgstr ""
+
+#: kitchenMain.cpp:381
+msgid "Connected to the database."
+msgstr ""
+
+#: kitchenMain.cpp:387
+msgid "Unable no connect to database '"
+msgstr ""
+
+#: kitchenMain.cpp:387
+msgid "' on "
+msgstr ""
+
+#: kitchenMain.cpp:389
+msgid "Unable to connect to the database. Reason:\n"
+msgstr ""
+
+#: kitchenMain.cpp:389
+msgid "Not connected."
+msgstr ""
+
+#: kitchenMain.cpp:412
+msgid "Welcome to..."
+msgstr ""
+
+#: kitchenMain.cpp:484
+msgid "<font size = 5>"
+msgstr ""
+
+#: kitchenMain.cpp:484
+msgid "</font><br align=center>Avg. time: <b>"
+msgstr ""
+
+#: kitchenMain.cpp:484
+msgid " min.</b> Quantity: <font size = 5>"
+msgstr ""
+
+#: kitchenMain.cpp:755
+msgid "Kitchen: "
+msgstr ""
+
+#: prog_set_panel.cpp:48
+msgid "Appearance"
+msgstr ""
+
+#: prog_set_panel.cpp:51
+msgid "Language:"
+msgstr ""
+
+#: prog_set_panel.cpp:54
+msgid "English"
+msgstr ""
+
+#: prog_set_panel.cpp:55
+msgid "Spanish"
+msgstr ""
+
+#: prog_set_panel.cpp:56
+msgid "Polish"
+msgstr ""
+
+#: prog_set_panel.cpp:57
+msgid "Russian"
+msgstr ""
+
+#: prog_set_panel.cpp:60
+msgid ""
+"You need to restart program for language \n"
+"settings to take effect!"
+msgstr ""
+
+#: settings.cpp:51
+msgid "Save"
+msgstr ""
+
+#: settings.cpp:53
+msgid "Cancel"
+msgstr ""
+
+#: settings.cpp:82
+msgid "Database"
+msgstr ""
+
+#: settings.cpp:88
+msgid "Program"
+msgstr ""
+
+#: settings.cpp:94
+msgid "Connection"
+msgstr ""
+
+#: threeorders.cpp:50
+msgid "Order nr: 15"
+msgstr ""
+
+#: threeorders.cpp:52 threeorders.cpp:124
+msgid "Witaly Belskiy"
+msgstr ""
+
+#: threeorders.cpp:61 threeorders.cpp:67 threeorders.cpp:133
+#: threeorders.cpp:139
+msgid "Label"
+msgstr ""
+
+#: threeorders.cpp:63 threeorders.cpp:135
+msgid "Comment:"
+msgstr ""
+
+#: threeorders.cpp:122
+msgid "Order nr: 14"
+msgstr ""
+
+#: threeorders.cpp:194
+msgid "Order nr: "
+msgstr ""
+
+#: threeorders.cpp:199 utils.cpp:50
+msgid " min"
+msgstr ""
+
+#: utils.cpp:38
+msgid "<b>NO</b> "
+msgstr ""
+
+#: utils.cpp:50
+msgid "Time:"
+msgstr ""
+
+#: utils.cpp:50
+msgid " Qty:"
+msgstr ""
