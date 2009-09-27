@@ -201,7 +201,7 @@ point.comment->SetLabel(std2wx(std::string(row["comment"]),wxConvUI));
         }
 
 
-    query << "SELECT `id` FROM `orders_dishes` WHERE `order_id`=" << point.orderId;
+    query << "SELECT `id` FROM `orders_dishes` WHERE `orders_dishes`.`kitchen`=1 AND `order_id`=" << point.orderId;
     res = query.store();
     if(res){
 mysqlpp::Row row;
@@ -272,7 +272,7 @@ temp << num;
             wxString toReplace = pointers[i].listbox->GetString(num);
             toReplace.Replace(_T("todo.png"),_T("done.png"));
 pointers[i].listbox->SetString(num, toReplace);
-query << "SELECT `id` FROM `orders_dishes` WHERE `ready`=0 AND `order_id`=" << pointers[i].orderId;
+query << "SELECT `id` FROM `orders_dishes` WHERE `ready`=0 AND `orders_dishes`.`kitchen`=1 AND `order_id`=" << pointers[i].orderId;
 mysqlpp::StoreQueryResult res = query.store();
 
 

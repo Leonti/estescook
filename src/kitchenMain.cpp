@@ -98,7 +98,7 @@ kitchenFrame::kitchenFrame(wxWindow* parent,wxWindowID id)
     wxMenuBar* MenuBar1;
     wxMenu* Menu2;
     wxFlexGridSizer* FlexGridSizer5;
-
+    
     Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
     GridSizer1 = new wxGridSizer(1, 1, 0, 0);
     Notebook1 = new wxNotebook(this, ID_NOTEBOOK1, wxDefaultPosition, wxDefaultSize, 0, _T("ID_NOTEBOOK1"));
@@ -207,7 +207,7 @@ kitchenFrame::kitchenFrame(wxWindow* parent,wxWindowID id)
     Timer1.Start(60000, false);
     GridSizer1->Fit(this);
     GridSizer1->SetSizeHints(this);
-
+    
     Connect(ID_BUTTON5,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&kitchenFrame::OnButton5Click);
     Connect(ID_TOGGLEBUTTON1,wxEVT_COMMAND_TOGGLEBUTTON_CLICKED,(wxObjectEventFunction)&kitchenFrame::OnToggleButton1Toggle);
     Connect(ID_TOGGLEBUTTON2,wxEVT_COMMAND_TOGGLEBUTTON_CLICKED,(wxObjectEventFunction)&kitchenFrame::OnToggleButton2Toggle);

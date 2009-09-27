@@ -64,8 +64,8 @@ COND_PLATFORM_OS2_1___estescook___os2_emxbindcmd = $(NM) estescook$(EXEEXT) | \
 all: estescook$(EXEEXT)
 
 install: install_estescook
-	$(INSTALL_DIR) $(DESTDIR)$(datadir)/estes
-	(cd $(srcdir)/src ; $(INSTALL_DATA)  ../share/estescook/done.png ../share/estescook/todo.png $(DESTDIR)$(datadir)/estes)
+	$(INSTALL_DIR) $(DESTDIR)$(datadir)/estescook
+	(cd $(srcdir)/src ; $(INSTALL_DATA)  ../share/estescook/done.png ../share/estescook/todo.png $(DESTDIR)$(datadir)/estescook)
 	$(INSTALL_DIR) $(DESTDIR)$(datadir)
 	for f in locale/pl/LC_MESSAGES/estescook.mo locale/es/LC_MESSAGES/estescook.mo locale/ru/LC_MESSAGES/estescook.mo; do \
 	if test ! -d $(DESTDIR)$(datadir)/`dirname $$f` ; then \
@@ -79,7 +79,7 @@ install: install_estescook
 	(cd $(srcdir)/src ; $(INSTALL_DATA)  estescook.png $(DESTDIR)$(datadir)/pixmaps)
 
 uninstall: uninstall_estescook
-	(cd $(DESTDIR)$(datadir)/estes ; rm -f done.png todo.png)
+	(cd $(DESTDIR)$(datadir)/estescook ; rm -f done.png todo.png)
 	for f in locale/pl/LC_MESSAGES/estescook.mo locale/es/LC_MESSAGES/estescook.mo locale/ru/LC_MESSAGES/estescook.mo; do \
 	rm -f $(DESTDIR)$(datadir)/$$f; \
 	done

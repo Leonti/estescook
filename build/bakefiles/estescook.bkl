@@ -58,7 +58,7 @@ kitchenApp.cpp
 ../share/estescook/done.png
 ../share/estescook/todo.png
 </files>
-			<install-to>$(DATADIR)/estes</install-to>
+			<install-to>$(DATADIR)/estescook</install-to>
 		</data-files>
 
 		<data-files-tree>
