@@ -45,7 +45,8 @@ ESTESCOOK_OBJECTS =  \
 	estescook_utils.o \
 	estescook_threeorders.o \
 	estescook_db_set_panel.o \
-	estescook_kitchenApp.o
+	estescook_kitchenApp.o \
+	estescook_about.o
 
 ### Conditionally set variables: ###
 
@@ -139,6 +140,9 @@ estescook_db_set_panel.o: $(srcdir)/src/db_set_panel.cpp
 
 estescook_kitchenApp.o: $(srcdir)/src/kitchenApp.cpp
 	$(CXXC) -c -o $@ $(ESTESCOOK_CXXFLAGS) $(srcdir)/src/kitchenApp.cpp
+
+estescook_about.o: $(srcdir)/src/about.cpp
+	$(CXXC) -c -o $@ $(ESTESCOOK_CXXFLAGS) $(srcdir)/src/about.cpp
 
 
 # Include dependency info, if present:

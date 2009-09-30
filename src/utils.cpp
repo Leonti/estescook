@@ -1,17 +1,36 @@
+/*************************************************************************************
+*  Estescook - Kitchen part of Estes Restaurant Point Of Sale                        *
+*  Copyright (C) 2009  Leonti Bielski                                                *
+*                                                                                    *
+*  This program is free software; you can redistribute it and/or modify              *
+*  it under the terms of the GNU General Public License as published by              *
+*  the Free Software Foundation; either version 2 of the License, or                 *
+*  (at your option) any later version.                                               *
+*                                                                                    *
+*  This program is distributed in the hope that it will be useful,                   *
+*  but WITHOUT ANY WARRANTY; without even the implied warranty of                    *
+*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                     *
+*  GNU General Public License for more details.                                      *
+*                                                                                    *
+*  You should have received a copy of the GNU General Public License                 *
+*  along with this program; if not, write to the Free Software                       *
+*  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA    *
+*************************************************************************************/
 #include "utils.h"
-wxString formatItem(mysqlpp::Connection* conn, int num, int dishId, bool main){
+wxString formatItem(mysqlpp::Connection* conn, int num, int dishId, bool main)
+{
 
     wxArrayString parts; //getting parts from mysql-query
-wxString title;
-wxString comment;
-wxString qty;
-wxTimeSpan diff;
-bool ready = false;
+    wxString title;
+    wxString comment;
+    wxString qty;
+    wxTimeSpan diff;
+    bool ready = false;
     mysqlpp::Query query = conn->query();
     query << "SELECT `orders_dishes`.`qty`,`orders_dishes`.`name`,`orders_dishes`.`comment`  ,\
     `orders_dishes`.`ready`,`orders`.`time` FROM `orders_dishes`,`orders` WHERE \
     `orders_dishes`.`id` = "<< dishId <<" AND `orders_dishes`.`order_id`=`orders`.`id`";
-mysqlpp::StoreQueryResult res = query.store();
+    mysqlpp::StoreQueryResult res = query.store();
     if (res)
     {
         mysqlpp::Row row = res.at(0);
@@ -22,86 +41,99 @@ mysqlpp::StoreQueryResult res = query.store();
         wxDateTime time;
         time.ParseDateTime(std2wx(std::string(row["time"]),wxConvUI));
         diff = wxDateTime::Now() - time;
-        }
+    }
 
-query << "SELECT * FROM `orders_dishes_parts` WHERE `orders_dishes_id`=" << dishId;
+    query << "SELECT * FROM `orders_dishes_parts` WHERE `orders_dishes_id`=" << dishId;
     res = query.store();
     if (res)
     {
-mysqlpp::Row row;
-mysqlpp::StoreQueryResult::size_type i;
-for (i = 0; i < res.num_rows(); ++i) {
-  row = res[i];
+        mysqlpp::Row row;
+        mysqlpp::StoreQueryResult::size_type i;
+        for (i = 0; i < res.num_rows(); ++i)
+        {
+            row = res[i];
 
             wxString partNameToAdd = getPartName(conn, int(row["parts_id"]));
-if(!bool(row["using"])){
-partNameToAdd  = _("<b>NO</b> ") + partNameToAdd;
-    }
-parts.Add(partNameToAdd);
+            if(!bool(row["using"]))
+            {
+                partNameToAdd  = _("<b>NO</b> ") + partNameToAdd;
             }
-            }
-
-
-
-wxString toRet;
-if(!main){
-toRet << _T("<b><font size=4>") << title << _T(" X ")<< qty <<_T("</b></font>");
-}else{
-toRet << _T("<br align = left>") << _("Time:") << _T(" <b>") << diff.Format(_T("%M")) << _(" min") <<_T("</b>") << _(" Qty:") << _T(" <b>") << qty <<_T("</b></br>");
-}
-
-toRet << _T("<div align=right><table cellspacing=0 cellpadding=0 WIDTH=100%><tr><td>");
-
-for(int i = 0; i < parts.GetCount(); ++i){
-toRet << _T("<br> * ") << parts[i];
-    }
-wxString readyImage;
-if(ready){
-    readyImage = _T("done.png");
-    }else{
-    readyImage = _T("todo.png");
+            parts.Add(partNameToAdd);
         }
+    }
 
-         wxStandardPaths path;
-wxFileName imageName;
-imageName.Assign(path.GetDataDir(),readyImage);
 
-toRet << _T("</td><td width = 50><a href=") << num << _T(":") << dishId << _T("><img src=") << imageName.GetFullPath() << _T("></a></td></tr></table></div>");
 
-if(comment != _T("")){
-toRet << _T("<font size=2><br align=left>Comment: <i>") << comment << _T("</i></font>");
+    wxString toRet;
+    if(!main)
+    {
+        toRet << _T("<b><font size=4>") << title << _T(" X ")<< qty <<_T("</b></font>");
+    }
+    else
+    {
+        toRet << _T("<br align = left>") << _("Time:") << _T(" <b>") << diff.Format(_T("%M")) << _(" min") <<_T("</b>") << _(" Qty:") << _T(" <b>") << qty <<_T("</b></br>");
+    }
+
+    toRet << _T("<div align=right><table cellspacing=0 cellpadding=0 WIDTH=100%><tr><td>");
+
+    for(int i = 0; i < parts.GetCount(); ++i)
+    {
+        toRet << _T("<br> * ") << parts[i];
+    }
+    wxString readyImage;
+    if(ready)
+    {
+        readyImage = _T("done.png");
+    }
+    else
+    {
+        readyImage = _T("todo.png");
+    }
+
+    wxStandardPaths path;
+    wxFileName imageName;
+    imageName.Assign(path.GetDataDir(),readyImage);
+
+    toRet << _T("</td><td width = 50><a href=") << num << _T(":") << dishId << _T("><img src=") << imageName.GetFullPath() << _T("></a></td></tr></table></div>");
+
+    if(comment != _T(""))
+    {
+        toRet << _T("<font size=2><br align=left>Comment: <i>") << comment << _T("</i></font>");
+    }
+
+    return toRet;
 }
 
-return toRet;
-    }
+wxString getPartName(mysqlpp::Connection* conn, int partId)
+{
 
-wxString getPartName(mysqlpp::Connection* conn, int partId){
-
-        mysqlpp::Query query = conn->query();
-        query << "SELECT * FROM `parts` WHERE `id`=" << partId;
-        mysqlpp::StoreQueryResult res = query.store();
-wxString partName;
-        if (res)
-        {
-            mysqlpp::Row row = res.at(0);
-            partName = std2wx(std::string(row["name"]),wxConvUI);
-
-        }
-
-        return partName;
+    mysqlpp::Query query = conn->query();
+    query << "SELECT * FROM `parts` WHERE `id`=" << partId;
+    mysqlpp::StoreQueryResult res = query.store();
+    wxString partName;
+    if (res)
+    {
+        mysqlpp::Row row = res.at(0);
+        partName = std2wx(std::string(row["name"]),wxConvUI);
 
     }
 
-bool sendMessageToServer(wxSocketClient* SocketClient, wxString message){
-   if (SocketClient->IsConnected()){
-    unsigned char c = 0xBE; //start to send message to main comp
-    SocketClient->Write(&c, 1);
-    SocketClient->SetFlags(wxSOCKET_WAITALL);
-    const wxChar *buf;
-    unsigned char len;
-    buf = message.c_str();
-    len  = (unsigned char)((wxStrlen(buf) + 1) * sizeof(wxChar));
-    SocketClient->Write(&len, 1);
-    SocketClient->Write(buf, len);
+    return partName;
+
 }
+
+bool sendMessageToServer(wxSocketClient* SocketClient, wxString message)
+{
+    if (SocketClient->IsConnected())
+    {
+        unsigned char c = 0xBE; //start to send message to main comp
+        SocketClient->Write(&c, 1);
+        SocketClient->SetFlags(wxSOCKET_WAITALL);
+        const wxChar *buf;
+        unsigned char len;
+        buf = message.c_str();
+        len  = (unsigned char)((wxStrlen(buf) + 1) * sizeof(wxChar));
+        SocketClient->Write(&len, 1);
+        SocketClient->Write(buf, len);
     }
+}

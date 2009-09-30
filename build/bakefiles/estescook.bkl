@@ -45,6 +45,7 @@ utils.cpp
 threeorders.cpp
 db_set_panel.cpp
 kitchenApp.cpp
+about.cpp
 </sources>
 
 

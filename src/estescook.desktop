@@ -3,8 +3,9 @@ Encoding=UTF-8
 GenericName=Addon to Estes POS
 Name=Estescook
 Exec=estescook
-Icon=estescook.png
+Icon=estescook
 Terminal=false
 Type=Application
-Categories=Utility;Applications;
+Categories=Utility;
+X-SuSE-translate=false
  

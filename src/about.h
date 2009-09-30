@@ -17,107 +17,76 @@
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA    *
 *************************************************************************************/
 
-#ifndef THREEORDERS_H
-#define THREEORDERS_H
+#ifndef ABOUT_H
+#define ABOUT_H
 
-//(*Headers(threeorders)
+//(*Headers(about)
+#include <wx/dialog.h>
 #include <wx/sizer.h>
+#include <wx/notebook.h>
 #include <wx/button.h>
 #include <wx/panel.h>
+#include <wx/statline.h>
 #include <wx/stattext.h>
-#include <wx/listbox.h>
 //*)
-#include <wx/msgdlg.h>
-#include <wx/htmllbox.h>
-#include <mysql++.h>
-#include "wx_std.h"
-#include "utils.h"
-#include <wx/dynarray.h>
-#include <wx/socket.h>
-#include <wx/notebook.h>
 
-
-
-struct panelPointers
-{
-    wxStaticText* number;
-    wxStaticText* name;
-    wxSimpleHtmlListBox* listbox;
-    wxStaticText* time;
-    wxStaticText* comment;
-    wxFlexGridSizer* sizer;
-    long listBoxId;
-    long buttonUpId;
-    long buttonDownId;
-    int orderId;
-};
-
-WX_DECLARE_OBJARRAY(panelPointers, ArrayOfPanelPointers);
-WX_DECLARE_OBJARRAY(wxArrayInt, ArrayOfInts);
-
-struct ordersInfos
-{
-    wxArrayString titles;
-    ArrayOfInts orderIdsArr;
-    bool success;
-};
-
-class threeorders: public wxPanel
+class about: public wxDialog
 {
 public:
 
+    about(wxWindow* parent,wxWindowID id=wxID_ANY,const wxPoint& pos=wxDefaultPosition,const wxSize& size=wxDefaultSize);
+    virtual ~about();
 
-    threeorders(wxWindow* parent,wxWindowID id=wxID_ANY,const wxPoint& pos=wxDefaultPosition,const wxSize& size=wxDefaultSize);
-    virtual ~threeorders();
-
-    //(*Declarations(threeorders)
-    wxFlexGridSizer* FlexGridSizer2;
-    wxGridSizer* GridSizer3;
+    //(*Declarations(about)
+    wxPanel* Panel1;
+    wxButton* Button1;
     wxStaticText* StaticText1;
+    wxStaticText* StaticText10;
+    wxPanel* Panel2;
     wxStaticText* StaticText3;
-    wxSimpleHtmlListBox* ListBox1;
-    wxButton* Button5;
+    wxStaticLine* StaticLine1;
+    wxStaticText* StaticText8;
+    wxStaticLine* StaticLine3;
+    wxStaticText* StaticText7;
     wxStaticText* StaticText4;
+    wxStaticText* StaticText5;
     wxStaticText* StaticText2;
-    wxStaticText* StaticText9;
-    wxButton* Button6;
-    //*)
-    wxArrayInt ordersIds;
-    ArrayOfPanelPointers pointers;
-
     wxNotebook* Notebook1;
+    wxStaticText* StaticText6;
+    wxStaticLine* StaticLine4;
+    wxStaticText* StaticText9;
+    wxStaticText* StaticText11;
+    //*)
 
-    void fillAll(void);
-    void setFace(void);
-    void clearPanels(void);
-    void refreshAll(void);
-    mysqlpp::Connection* conn;
-    wxSocketClient* SocketClient;
 protected:
 
-    //(*Identifiers(threeorders)
-    static const long ID_STATICTEXT3;
-    static const long ID_STATICTEXT4;
-    static const long ID_HTMLLISTBOX5;
+    //(*Identifiers(about)
     static const long ID_STATICTEXT1;
     static const long ID_STATICTEXT2;
+    static const long ID_STATICLINE3;
+    static const long ID_STATICTEXT3;
+    static const long ID_STATICTEXT8;
     static const long ID_STATICTEXT9;
-    static const long ID_BUTTON5;
-    static const long ID_BUTTON6;
+    static const long ID_STATICLINE4;
+    static const long ID_STATICTEXT4;
+    static const long ID_STATICTEXT5;
+    static const long ID_STATICTEXT6;
+    static const long ID_STATICTEXT7;
+    static const long ID_STATICLINE1;
+    static const long ID_PANEL2;
+    static const long ID_STATICTEXT10;
+    static const long ID_STATICTEXT11;
+    static const long ID_PANEL1;
+    static const long ID_NOTEBOOK1;
+    static const long ID_BUTTON1;
     //*)
 
 private:
-    void fillOrder(panelPointers point);
-    void addOrder(void);
-    ordersInfos getOrdersInfo(void);
-    bool href;
-    bool toDelete;
-    //(*Handlers(threeorders)
+
+    //(*Handlers(about)
+    void OnButton1Click(wxCommandEvent& event);
     //*)
-    void OnButtonUpClick(wxCommandEvent& event);
-    void OnButtonDownClick(wxCommandEvent& event);
-    void OnListBoxSelect(wxCommandEvent& event);
-    void OnListUrlClick(wxHtmlLinkEvent& event);
+
     DECLARE_EVENT_TABLE()
 };
 

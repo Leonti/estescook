@@ -1,7 +1,6 @@
 /*************************************************************************************
-*  ETM Manager - works with the time data from the Mysql database. Part of           *
-*  ETM (Employee Time Management) project.                                           *
-*  Copyright (C) 2008  Leonti Bielski                                                *
+*  Estescook - Kitchen part of Estes Restaurant Point Of Sale                        *
+*  Copyright (C) 2009  Leonti Bielski                                                *
 *                                                                                    *
 *  This program is free software; you can redistribute it and/or modify              *
 *  it under the terms of the GNU General Public License as published by              *
@@ -17,6 +16,7 @@
 *  along with this program; if not, write to the Free Software                       *
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA    *
 *************************************************************************************/
+
 #ifndef PROG_SET_PANEL_H
 #define PROG_SET_PANEL_H
 
@@ -29,48 +29,49 @@
 #include <wx/config.h>
 #include <wx/msgdlg.h>
 
-struct current_settings{
-int lang;
-wxString addres;
-int port;
-    };
+struct current_settings
+{
+    int lang;
+    wxString addres;
+    int port;
+};
 
 
 class prog_set_panel: public wxPanel
 {
-	public:
+public:
 
-		prog_set_panel(wxWindow* parent,wxWindowID id=wxID_ANY,const wxPoint& pos=wxDefaultPosition,const wxSize& size=wxDefaultSize);
-		virtual ~prog_set_panel();
+    prog_set_panel(wxWindow* parent,wxWindowID id=wxID_ANY,const wxPoint& pos=wxDefaultPosition,const wxSize& size=wxDefaultSize);
+    virtual ~prog_set_panel();
 
-		//(*Declarations(prog_set_panel)
-		wxStaticText* StaticText1;
-		wxChoice* Choice1;
-		wxStaticText* StaticText2;
-		//*)
-		current_settings* set_now;
-        wxConfigBase *confi;
-		void fill_all(void);
-		void Save(void);
+    //(*Declarations(prog_set_panel)
+    wxStaticText* StaticText1;
+    wxChoice* Choice1;
+    wxStaticText* StaticText2;
+    //*)
+    current_settings* set_now;
+    wxConfigBase *confi;
+    void fill_all(void);
+    void Save(void);
 
-	protected:
+protected:
 
-		//(*Identifiers(prog_set_panel)
-		static const long ID_STATICTEXT1;
-		static const long ID_CHOICE1;
-		static const long ID_STATICTEXT2;
-		//*)
+    //(*Identifiers(prog_set_panel)
+    static const long ID_STATICTEXT1;
+    static const long ID_CHOICE1;
+    static const long ID_STATICTEXT2;
+    //*)
 
-	private:
+private:
 
-		//(*Handlers(prog_set_panel)
-		void OnCheckBox1Click(wxCommandEvent& event);
-		void OnCheckBox2Click(wxCommandEvent& event);
-		void OnCheckBox3Click(wxCommandEvent& event);
-		//*)
-		wxArrayInt langs;
+    //(*Handlers(prog_set_panel)
+    void OnCheckBox1Click(wxCommandEvent& event);
+    void OnCheckBox2Click(wxCommandEvent& event);
+    void OnCheckBox3Click(wxCommandEvent& event);
+    //*)
+    wxArrayInt langs;
 
-		DECLARE_EVENT_TABLE()
+    DECLARE_EVENT_TABLE()
 };
 
 #endif

@@ -1,6 +1,6 @@
 /*************************************************************************************
-*  Time Logger - writes time in and time out into database                           *
-*  Copyright (C) 2008  Leonti Bielski                                                *
+*  Estescook - Kitchen part of Estes Restaurant Point Of Sale                        *
+*  Copyright (C) 2009  Leonti Bielski                                                *
 *                                                                                    *
 *  This program is free software; you can redistribute it and/or modify              *
 *  it under the terms of the GNU General Public License as published by              *
@@ -16,6 +16,7 @@
 *  along with this program; if not, write to the Free Software                       *
 *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA    *
 *************************************************************************************/
+
 #include <string>
 #include <wx/string.h>
 std::string wx2std(const wxString& input, wxMBConv* conv);
