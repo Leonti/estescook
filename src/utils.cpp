@@ -124,6 +124,7 @@ wxString getPartName(mysqlpp::Connection* conn, int partId)
 
 bool sendMessageToServer(wxSocketClient* SocketClient, wxString message)
 {
+    bool sent = false;
     if (SocketClient->IsConnected())
     {
         unsigned char c = 0xBE; //start to send message to main comp
@@ -135,5 +136,8 @@ bool sendMessageToServer(wxSocketClient* SocketClient, wxString message)
         len  = (unsigned char)((wxStrlen(buf) + 1) * sizeof(wxChar));
         SocketClient->Write(&len, 1);
         SocketClient->Write(buf, len);
+
+        sent = true;
     }
+    return sent;
 }

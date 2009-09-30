@@ -266,6 +266,7 @@ kitchenFrame::kitchenFrame(wxWindow* parent,wxWindowID id)
 }
 bool kitchenFrame::connectToServer()
 {
+    bool connected = false;
     wxIPV4address addr;
     addr.Hostname(set_now.addres);
     addr.Service(set_now.port);
@@ -277,12 +278,15 @@ bool kitchenFrame::connectToServer()
     if (SocketClient1->IsConnected())
     {
         StatusBar1->SetStatusText(_("Connection to '") + set_now.addres + _("' established."),1);
+        connected = true;
     }
     else
     {
 //    SocketClient1->Close();
         StatusBar1->SetStatusText(_("Unable to connect to '") + set_now.addres + _("'."),1);
     }
+
+return connected;
 }
 
 void kitchenFrame::OnSocketEvent(wxSocketEvent& event)
